@@ -15,7 +15,7 @@ const getWeatherData = (type, searchParams) => {
 const formatCurrentWeather = (data) => {
   const {
     coord: { lat, lon },
-    main: { temp, feels_like, temp_min, temp_max, humidity },
+    main: { temp, feels_like, temp_min, temp_max, humidity, pressure },
     name,
     dt,
     sys: { country, sunrise, sunset },
@@ -33,6 +33,7 @@ const formatCurrentWeather = (data) => {
     temp_min,
     temp_max,
     humidity,
+    pressure,
     name,
     dt,
     country,
@@ -50,6 +51,7 @@ const formatForecastWeather = (data) => {
     return {
       title: formatToLocalTime(d.dt, timezone, "ccc"),
       temp: d.temp.day,
+      mode: d.weather[0].description,
       icon: d.weather[0].icon,
     };
   });

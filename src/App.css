@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+
+#slider{
+  overflow-x: scroll;
+  overflow-y: scroll;
+  border: 1px solid red;
+  width: 400px;
+}
