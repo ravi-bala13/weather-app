@@ -1,11 +1,18 @@
-import './App.css';
-import UilReact from '@iconscout/react-unicons/icons/uil-react'
+import "./App.css";
+import ForeCastBox from "./components/ForeCastBox";
+import GraphBox from "./components/GraphBox";
+import InputBox from "./components/InputBox";
+import Pressure from "./components/Pressure";
+import SunTime from "./components/SunTime";
 
 function App() {
   return (
-    <div className="App">
-      <h1>hello</h1>
-      <UilReact size="140" color="#61DAFB" />
+    <div className="border flex flex-col justify-center items-center">
+      <InputBox />
+      <ForeCastBox />
+      <GraphBox />
+      <Pressure />
+      <SunTime />
     </div>
   );
 }
