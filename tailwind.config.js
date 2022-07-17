@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     colors: {
       "bals-blue": "#f2fbfe",
+      "each-day-col": "#fffdf7",
     },
   },
   plugins: [],

@@ -14,10 +14,13 @@ function ForeCastBox({ weatherData: { daily } }) {
                 key={i}
                 className="py-2 h-32 my-2 flex flex-col items-center text-sm w-[84px] hover:border sm:w-[84px]"
               >
-                <p>{item.title}</p>
-                <p>{item.temp.toFixed()} °27°</p>
-                <img className="h-8" src={iconUrlFromCode(item.icon)} alt="" />
-                <p className="">{item.mode}</p>
+                <div className="w-18">
+                  <p>{item.title}</p>
+                  <p>{item.temp.toFixed()} °27°</p>
+                </div>
+
+                <img className="h-10" src={iconUrlFromCode(item.icon)} alt="" />
+                <p className="w-20">{item.mode}</p>
               </div>
             );
           })}
