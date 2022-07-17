@@ -8,27 +8,45 @@ import SunTime from "./components/SunTime";
 import { getFormattedWeatherData } from "./services/weatherService";
 
 function App() {
-  const [query, setQuery] = useState({ q: "bangalore" });
+  const [query, setQuery] = useState({ q: "" });
   console.log("query:", query);
   const [weatherData, setWeatherData] = useState(null);
   const units = "metric";
 
-  useEffect(() => {
-    const fetchWeather = async () => {
-      const message = query.q ? query.q : "current location.";
+  const handleLocationClick = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
 
-      // toast.info("Fetching weather for " + message);
-
-      await getFormattedWeatherData({ ...query, units }).then((data) => {
-        console.log("data:", data);
-        // toast.success(
-        //   `Successfully fetched weather for ${data.name}, ${data.country}.`
-        // );
-
-        setWeatherData(data);
+        setQuery({
+          lat,
+          lon,
+        });
       });
-    };
+    }
+  };
 
+  const fetchWeather = async () => {
+    const message = query.q ? query.q : "current location.";
+
+    console.log("Fetching weather for " + message);
+
+    await getFormattedWeatherData({ ...query, units }).then((data) => {
+      console.log("data:", data);
+      console.log(
+        `Successfully fetched weather for ${data.name}, ${data.country}.`
+      );
+
+      setWeatherData(data);
+    });
+  };
+
+  useEffect(() => {
+    handleLocationClick();
+  }, []);
+
+  useEffect(() => {
     fetchWeather();
   }, [query]);
 

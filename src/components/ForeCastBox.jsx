@@ -12,7 +12,7 @@ function ForeCastBox({ weatherData: { daily } }) {
             return (
               <div
                 key={i}
-                className="py-2 h-32 my-2 flex flex-col items-center text-sm w-[84px] hover:border"
+                className="py-2 h-32 my-2 flex flex-col items-center text-sm w-[84px] hover:border sm:w-[84px]"
               >
                 <p>{item.title}</p>
                 <p>{item.temp.toFixed()} °27°</p>

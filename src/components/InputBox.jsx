@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   // UilAirplay,
   UilSearch,
@@ -6,6 +6,11 @@ import {
 } from "@iconscout/react-unicons";
 
 function InputBox({ setQuery }) {
+  const [input, setInput] = useState("");
+  const onSubmit = () => {
+    setQuery({ q: input });
+  };
+
   return (
     <div className="relative flex flex-row items-center my-5 w-full text-black md:mx-auto md:w-1/2">
       <UilLocationPoint
@@ -14,12 +19,14 @@ function InputBox({ setQuery }) {
       />
 
       <input
-        onChange={setQuery}
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
         placeholder="Search for city...."
         className="pl-10 text-xl font-light p-2 w-full shadow-xl capitalize placeholder:lowercase mx-4"
       />
 
       <UilSearch
+        onClick={onSubmit}
         size={25}
         className="absolute right-10 text-blue cursor-pointer transition ease-out hover:scale-125"
       />
