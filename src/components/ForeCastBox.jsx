@@ -35,7 +35,7 @@ function ForeCastBox({
   };
 
   return (
-    <div className=" w-full mb-5 md:mx-auto md:w-1/2">
+    <div className=" w-full my-5 mb-5 md:mx-auto md:w-1/2">
       <div className="text-center space-x-2 mx-4 flex flex-row justify-between items-center overflow-x-scroll">
         {daily &&
           daily.map((item, i) => {

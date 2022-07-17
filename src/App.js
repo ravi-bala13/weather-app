@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import CitiesList from "./components/CitiesList";
 import ForeCastBox from "./components/ForeCastBox";
 import GraphBox from "./components/GraphBox";
 import InputBox from "./components/InputBox";
@@ -73,6 +74,7 @@ function App() {
       {weatherData && (
         <div className="border flex flex-col justify-center items-center">
           <InputBox setQuery={setQuery} weatherData={weatherData} />
+
           <ForeCastBox
             weatherData={weatherData}
             dailyDetails={dailyDetails}
