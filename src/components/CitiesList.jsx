@@ -2,10 +2,17 @@ import React, { useState } from "react";
 
 function CitiesList({ input, setInput, setDivToggle }) {
   const [cities, setCities] = useState([
-    "madurai",
-    "chennai",
-    "trichy",
-    "bengaluru",
+    "Madurai",
+    "Chennai",
+    "Trichy",
+    "Bengaluru",
+    "Coimbatore",
+    "Madurai",
+    "Tiruchirapalli",
+    "Tiruppur",
+    "Salem",
+    "Erode",
+    "Tirunelveli",
   ]);
   return (
     <div className="absolute z-10 bg-white mt-4 flex px-4 flex-col items-center my-2 w-full text-black">
