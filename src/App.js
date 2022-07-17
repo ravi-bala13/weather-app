@@ -20,7 +20,7 @@ function App() {
     sunset: 6,
     humidity: 90,
     pressure: 56,
-    icon: "",
+    icon: "10d",
   });
   console.log("dailyDetails:", dailyDetails);
   const handleLocationClick = () => {
@@ -55,6 +55,7 @@ function App() {
         `Successfully fetched weather for ${data.name}, ${data.country}.`
       );
 
+      setDailyDetails({ ...dailyDetails, ...data });
       setWeatherData(data);
     });
   };
@@ -71,16 +72,13 @@ function App() {
     <div>
       {weatherData && (
         <div className="border flex flex-col justify-center items-center">
-          <InputBox setQuery={setQuery} />
+          <InputBox setQuery={setQuery} weatherData={weatherData} />
           <ForeCastBox
             weatherData={weatherData}
             dailyDetails={dailyDetails}
             setDailyDetails={setDailyDetails}
           />
           <GraphBox weatherData={weatherData} dailyDetails={dailyDetails} />
-          <Pressure weatherData={weatherData} />
-
-          <SunTime weatherData={weatherData} />
         </div>
       )}
     </div>

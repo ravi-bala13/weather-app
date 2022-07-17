@@ -6,8 +6,6 @@ function ForeCastBox({
   setDailyDetails,
   dailyDetails,
 }) {
-  console.log("daily:", daily);
-
   const [activeBox, setActiveBox] = useState({
     activeObject: null,
     objects: [
@@ -23,9 +21,8 @@ function ForeCastBox({
   });
 
   const toggleActiveBox = (index) => {
-    console.log("index:", index);
     setActiveBox({ ...activeBox, activeObject: activeBox.objects[index] });
-    const { temp } = daily[index];
+
     setDailyDetails({ ...dailyDetails, ...daily[index] });
   };
 

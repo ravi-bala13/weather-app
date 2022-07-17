@@ -5,8 +5,8 @@ import {
   UilLocationPoint,
 } from "@iconscout/react-unicons";
 
-function InputBox({ setQuery }) {
-  const [input, setInput] = useState("");
+function InputBox({ setQuery, weatherData }) {
+  const [input, setInput] = useState(weatherData.name);
   const onSubmit = () => {
     setQuery({ q: input });
   };
@@ -23,7 +23,7 @@ function InputBox({ setQuery }) {
         onChange={(e) => setInput(e.target.value)}
         placeholder="Search for city...."
         id="input"
-        className="rounded-lg pl-10 text-xl font-light p-2 w-full shadow-xl capitalize placeholder:lowercase mx-4"
+        className="rounded-lg pl-10 text-xl font-light p-2 w-full h-12 capitalize placeholder:lowercase mx-4"
       />
 
       <UilSearch

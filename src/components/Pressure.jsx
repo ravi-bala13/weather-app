@@ -1,15 +1,15 @@
 import React from "react";
 
-function Pressure({ weatherData: { humidity, pressure } }) {
+function Pressure({ dailyDetails }) {
   return (
-    <div className="flex flex-row w-full my-6 md:mx-auto md:w-1/2">
-      <div className="bg-bals-blue w-1/2 h-18 ml-4 mr-3 p-4">
+    <div className="flex flex-row w-full my-6 md:mx-auto">
+      <div className="bg-bals-blue w-1/2 h-16 ml-2 mr-3 p-2">
         <p>Pressure</p>
-        <p>{pressure} hpa</p>
+        <p>{dailyDetails.pressure} hpa</p>
       </div>
-      <div className="bg-bals-blue w-1/2 mr-4 h-18 p-4">
+      <div className="bg-bals-blue w-1/2 mr-2 h-16 p-2">
         <p>Humidity</p>
-        <p>{humidity} %</p>
+        <p>{dailyDetails.humidity} %</p>
       </div>
     </div>
   );

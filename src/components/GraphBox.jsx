@@ -1,8 +1,10 @@
 import React from "react";
 import { iconUrlFromCode } from "../services/weatherService";
 import LineChart from "./LineChart";
+import Pressure from "./Pressure";
+import SunTime from "./SunTime";
 
-function GraphBox({ weatherData: { icon }, dailyDetails }) {
+function GraphBox({ weatherData, dailyDetails }) {
   return (
     <div className="w-full md:mx-auto md:w-1/2">
       <div id="graphbox" className="rounded-lg p-2 shadow-xl mx-4">
@@ -18,7 +20,13 @@ function GraphBox({ weatherData: { icon }, dailyDetails }) {
         </div>
 
         <div>
-          <LineChart />
+          <LineChart hourlyData={weatherData.hourly} />
+        </div>
+
+        <Pressure dailyDetails={dailyDetails} />
+        <SunTime weatherData={weatherData} dailyDetails={dailyDetails} />
+        <div className="w-full md:mx-auto">
+          <img src={"graph.png"} alt="" />
         </div>
       </div>
     </div>

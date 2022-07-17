@@ -1,21 +1,25 @@
 import React from "react";
 import { Chart } from "react-google-charts";
 
-export const data = [
-  ["", "Sales"],
-  ["", 1000],
-  ["", 1170],
-  ["", 660],
-  ["", 1030],
-];
+export let data = [];
 
 export const options = {
-  title: "Company Performance",
+  title: "",
   curveType: "function",
   legend: { position: "bottom" },
 };
 
-function LineChart() {
+function LineChart({ hourlyData }) {
+  data = [];
+  data.push(["Celcius", "Hours"]);
+  for (let i = 0; i < hourlyData.length; i++) {
+    const element = hourlyData[i];
+    let arr = [];
+    arr[0] = hourlyData[i].title.split(":")[0];
+    arr[1] = hourlyData[i].temp;
+    data.push(arr);
+  }
+
   return (
     <Chart
       chartType="LineChart"
