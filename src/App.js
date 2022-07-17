@@ -4,8 +4,6 @@ import CitiesList from "./components/CitiesList";
 import ForeCastBox from "./components/ForeCastBox";
 import GraphBox from "./components/GraphBox";
 import InputBox from "./components/InputBox";
-import Pressure from "./components/Pressure";
-import SunTime from "./components/SunTime";
 import { getFormattedWeatherData } from "./services/weatherService";
 
 function App() {
