@@ -53,6 +53,10 @@ const formatForecastWeather = (data) => {
       temp: d.temp.day,
       mode: d.weather[0].description,
       icon: d.weather[0].icon,
+      sunrise: d.sunrise,
+      sunset: d.sunset,
+      humidity: d.humidity,
+      pressure: d.pressure,
     };
   });
 

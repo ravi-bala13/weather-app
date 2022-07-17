@@ -14,6 +14,15 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const units = "metric";
 
+  const [dailyDetails, setDailyDetails] = useState({
+    temp: 29,
+    sunrise: 5,
+    sunset: 6,
+    humidity: 90,
+    pressure: 56,
+    icon: "",
+  });
+  console.log("dailyDetails:", dailyDetails);
   const handleLocationClick = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -63,8 +72,12 @@ function App() {
       {weatherData && (
         <div className="border flex flex-col justify-center items-center">
           <InputBox setQuery={setQuery} />
-          <ForeCastBox weatherData={weatherData} />
-          <GraphBox weatherData={weatherData} />
+          <ForeCastBox
+            weatherData={weatherData}
+            dailyDetails={dailyDetails}
+            setDailyDetails={setDailyDetails}
+          />
+          <GraphBox weatherData={weatherData} dailyDetails={dailyDetails} />
           <Pressure weatherData={weatherData} />
 
           <SunTime weatherData={weatherData} />
