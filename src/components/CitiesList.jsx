@@ -7,7 +7,6 @@ function CitiesList({ input, setInput, setDivToggle }) {
     "Trichy",
     "Bengaluru",
     "Coimbatore",
-    "Madurai",
     "Tiruchirapalli",
     "Tiruppur",
     "Salem",
