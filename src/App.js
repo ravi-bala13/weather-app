@@ -81,7 +81,7 @@ function App() {
           <GraphBox weatherData={weatherData} dailyDetails={dailyDetails} />
         </div>
       ) : (
-        <div className="flex items-center mt-60">
+        <div className="flex justify-center items-center mt-60">
           <img
             src="https://miro.medium.com/max/1400/1*5ngZiNtGMrp_xmZHxSvJ0g.gif"
             alt=""
