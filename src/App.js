@@ -69,8 +69,8 @@ function App() {
 
   return (
     <div>
-      {weatherData && (
-        <div className="border flex flex-col justify-center items-center">
+      {weatherData ? (
+        <div className="flex flex-col justify-center items-center">
           <InputBox setQuery={setQuery} weatherData={weatherData} />
 
           <ForeCastBox
@@ -79,6 +79,13 @@ function App() {
             setDailyDetails={setDailyDetails}
           />
           <GraphBox weatherData={weatherData} dailyDetails={dailyDetails} />
+        </div>
+      ) : (
+        <div className="flex items-center mt-60">
+          <img
+            src="https://miro.medium.com/max/1400/1*5ngZiNtGMrp_xmZHxSvJ0g.gif"
+            alt=""
+          />
         </div>
       )}
     </div>
